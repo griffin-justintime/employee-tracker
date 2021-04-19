@@ -14,7 +14,7 @@ const start = () => {
     inquirer.prompt({
         name: 'readInfo',
         type:
-        message
+        message: ''
     }).then((answer) => {
         console.log(answer.readInfo);
 
