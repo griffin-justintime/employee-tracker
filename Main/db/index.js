@@ -7,14 +7,14 @@ const connection = mysql.createConnection({
     port: 3306, 
     user: 'root', 
     password: '',
-    database: 'employee'
+    database: 'employees'
 });
 
 const start = () => {
     inquirer.prompt({
         name: 'readInfo', 
         type: 'message',
-        message: 'Type READ to see what the employee database looks like, type WRITE to add data to the database.'
+        message: 'Type READ to see what the employees database looks like, type WRITE to add data to the database.'
     }).then((answer) => {
         console.log(answer);
         console.log(answer.readInfo);

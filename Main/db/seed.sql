@@ -1,4 +1,4 @@
-use employee;
+use employees;
 
 INSERT INTO department
     (name)
@@ -18,4 +18,16 @@ VALUES
     ('Account Manager', 160000, 3),
     ('Accountant', 125000, 3),
     ('Legal Team Lead', 250000, 4),
-    ('Lawyer', )
+    ('Lawyer', 190000, 4);
+
+INSERT INTO employee
+    (first_name, last_name, role_id, manager_id)
+VALUES
+    ('John', 'Doe', 1, 3),
+    ('Mike', "Chan", 1, 1),
+    ('Ashley', 'Rodriguez', 2, NULL),
+    ('Kevin', 'Tupik', 2, 3),
+    ('Malia', 'Brown', 3, NULL),
+    ('Sarah', 'Lourd', 4, NULL),
+    ('Tom', 'Allen', 4, 6),
+    ('Tammer', 'Galal', 2, 4);
