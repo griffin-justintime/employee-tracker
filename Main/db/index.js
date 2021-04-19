@@ -26,7 +26,7 @@ const start = () => {
             console.log('');
         }
         
-        })
+    
     })
 }
 
