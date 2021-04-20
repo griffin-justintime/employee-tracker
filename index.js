@@ -7,9 +7,18 @@ const connection = mysql.createConnection({
 
   port: 3306,
   user: "root",
-  password: "",
-  database: "employees",
+  password: "Peterabbit88!",
+  database: "employees_db",
 });
+
+connection.connect((err) => {
+  if (err) throw err;
+
+  console.log("Connected", connection.threadId);
+  // start();
+});
+
+
 
 // const start = () => {
 //   inquirer
@@ -49,9 +58,4 @@ const connection = mysql.createConnection({
 //     });
 // };
 
-connection.connect((err) => {
-  if (err) throw err;
 
-  console.log("Did I connect to the database?", connection.threadId);
-  start();
-});
