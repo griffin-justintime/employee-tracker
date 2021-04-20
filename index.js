@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
+const { start } = require("node:repl");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -15,26 +16,26 @@ connection.connect((err) => {
   if (err) throw err;
 
   console.log("Connected", connection.threadId);
-  // start();
+  start();
 });
 
-function initialQuest() {
-  inquirer.prompt(
-    [
+function start() {
+  inquirer.prompt([
+    {
       type: "list",
       message: "What would you like to do?",
-      name: "option",
-      options: [
+      name: "options",
+      choices: [
         "View All Employees",
         "View All Employees By Department",
         "View All Employees By Manager",
         "Add Employee",
         "Remove Employee",
         "Update Employee Role",
-        "Update Employee Manager"
-      ]
-    ]
-  )
+        "Update Employee Manager",
+      ],
+    },
+  ]);
 }
 
 // const start = () => {
@@ -74,5 +75,3 @@ function initialQuest() {
 //       }
 //     });
 // };
-
-
