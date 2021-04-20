@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
 
   port: 3306,
   user: "root",
-  password: "Peterabbit88!",
+  password: "",
   database: "employees_db",
 });
 
@@ -20,11 +20,11 @@ connection.connect((err) => {
 });
 
 function start() {
-  inquirer.prompt([
+  inquirer.prompt(
     {
-      type: "list",
-      message: "What would you like to do?",
       name: "options",
+      type: "rawlist",
+      message: "What would you like to do?",
       choices: [
         "View All Employees",
         "View All Employees By Department",
@@ -35,7 +35,9 @@ function start() {
         "Update Employee Manager",
       ],
     },
-  ]);
+  )
+  .then((answer) => {
+    switch (answer.action) {
 }
 
 // const start = () => {
