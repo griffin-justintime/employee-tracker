@@ -18,7 +18,24 @@ connection.connect((err) => {
   // start();
 });
 
-
+function initialQuest() {
+  inquirer.prompt(
+    [
+      type: "list",
+      message: "What would you like to do?",
+      name: "option",
+      options: [
+        "View All Employees",
+        "View All Employees By Department",
+        "View All Employees By Manager",
+        "Add Employee",
+        "Remove Employee",
+        "Update Employee Role",
+        "Update Employee Manager"
+      ]
+    ]
+  )
+}
 
 // const start = () => {
 //   inquirer

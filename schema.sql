@@ -14,6 +14,7 @@ CREATE TABLE role (
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INT NOT NULL,
+    INDEX dep_ind (department_id),
 )
 
 CREATE TABLE employee (
