@@ -1,7 +1,6 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 const consoleTable = require("console.table");
-const { start } = require("node:repl");
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -40,6 +39,7 @@ function start() {
     switch (answer.action) {
 }
 
+connection.query("Select employee.first_name, employee.last_name, 
 // const start = () => {
 //   inquirer
 //     .prompt({
